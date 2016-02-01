@@ -14,7 +14,6 @@
 # ======================================================================================================================
 
 import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
 from tensorx.parts.core import NeuralNetwork,Layer
 from tensorflow.examples.tutorials.mnist import input_data
 

@@ -4,6 +4,11 @@ TensorX
 A minimalist utility library to build neural network models in TensorFlow with minimum verbose (and without unnecessary 
 levels of abstraction). _TensorX_ provides a minimum set of utility _parts_ to build computation graphs.
 
+## Pip Installation
+```
+sudo pip3 install --upgrade git+https://github.com/davidelnunes/tensorx.git
+```
+
 ## Licence
 Copyright 2016 Davide Nunes
 

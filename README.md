@@ -9,7 +9,7 @@ levels of abstraction). _TensorX_ provides a minimum set of utility _parts_ to b
 sudo pip3 install --upgrade git+https://github.com/davidelnunes/tensorx.git
 ```
 
-## Getting Started
+## Getting Started: MNIST example with TensorX
 
 ```python
 import tensorflow as tf

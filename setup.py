@@ -31,6 +31,7 @@ setup(
     install_requires=[
         'networkx>=1.11',
         'numpy >= 1.8.2',
-        'git+https://github.com/tensorflow/tensorflow'
-    ]
+        'tensorflow >= 0.6.0'],
+
+    dependency_links=['https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.6.0-cp27-none-linux_x86_64.whl']
 )

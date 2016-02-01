@@ -4,6 +4,11 @@ TensorX
 A minimalist utility library to build neural network models in TensorFlow with minimum verbose (and without unnecessary 
 levels of abstraction). _TensorX_ provides a minimum set of utility _parts_ to build computation graphs.
 
+## Pip Installation
+```
+sudo pip3 install --upgrade git+https://github.com/davidelnunes/tensorx.git
+```
+
 ## Getting Started
 
 ```python
@@ -52,11 +57,6 @@ for i in range(1000):
 
 print("Error:" + str((1 - accuracy.eval({x: mnist.test.images, target_output: mnist.test.labels}))*100)+"%")
 ss.close()
-```
-
-## Pip Installation
-```
-sudo pip3 install --upgrade git+https://github.com/davidelnunes/tensorx.git
 ```
 
 ## Licence

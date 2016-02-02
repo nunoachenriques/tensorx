@@ -5,6 +5,13 @@ A minimalist utility library to build neural network models in TensorFlow with m
 levels of abstraction). _TensorX_ provides a minimum set of utility _parts_ to build computation graphs.
 
 ## Pip Installation
+1. Install [TensorFlow](https://www.tensorflow.org/versions/master/get_started/os_setup.html)
+```
+# Ubuntu/Linux 64-bit, CPU only:
+sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.6.0-cp34-none-linux_x86_64.wh
+```
+
+2. Install TensorX
 ```
 sudo pip3 install --upgrade git+https://github.com/davidelnunes/tensorx.git
 ```

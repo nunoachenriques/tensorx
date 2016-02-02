@@ -14,7 +14,11 @@
 # ======================================================================================================================
 
 from distutils.core import setup
+import sys
 
+# python version restriction set to 3.4
+if not sys.version_info[0] == 3 or not sys.version_info[1] == 4:
+    sys.exit("Sorry, TensorX runs on python 3.4 only!")
 
 _VERSION = '0.1.0'
 

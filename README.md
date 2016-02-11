@@ -1,5 +1,6 @@
-TensorX
-=======
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
+# TensorX
 
 A minimalist utility library to build neural network models in TensorFlow with minimum verbose (and without unnecessary 
 levels of abstraction). _TensorX_ provides a minimum set of utility _parts_ to build computation graphs.

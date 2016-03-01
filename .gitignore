@@ -53,3 +53,5 @@ target/
 ### Idea
 .idea
 
+### Library Specific
+MNIST_data

@@ -14,7 +14,11 @@
 # ======================================================================================================================
 
 from distutils.core import setup
+import sys
 
+# python version restriction set to 3.4
+if not sys.version_info[0] == 3 and not sys.version_info[1] == 4:
+    sys.exit("Sorry, TensorX runs on python 3.4 only!")
 
 _VERSION = '0.1.0'
 
@@ -30,8 +34,6 @@ setup(
 
     install_requires=[
         'networkx>=1.11',
-        'numpy >= 1.8.2',
-        'tensorflow >= 0.6.0'],
-
-    dependency_links=['https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.6.0-cp27-none-linux_x86_64.whl']
+        'numpy >= 1.8.2'
+    ]
 )

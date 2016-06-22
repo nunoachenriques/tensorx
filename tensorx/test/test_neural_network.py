@@ -33,6 +33,26 @@ class TestNeuralNetwork(TestCase):
         nn.add_layer(input_layer)
         self.assertEqual(nn.size(), 1)
 
+    def test_layer(self):
+        n_inputs = 10
+        n_hidden = 20
+
+        x = tf.ones([1, n_inputs])
+        input_layer = Layer(n_units=n_inputs, activation=x)
+
+        nn = NeuralNetwork(input_layer)
+        self.assertEqual(nn.size(), 1)
+
+        # add a layer with biases
+        hidden_layer = Layer(n_hidden, activation=tf.identity)
+        nn.add_layer(hidden_layer, biased=True)
+
+        layer_0 = nn.layer(0)
+        layer_1 = nn.layer(1)
+
+        self.assertEqual(layer_0, input_layer)
+        self.assertEqual(layer_1, hidden_layer)
+
     def test_weights(self):
         n_inputs = 10
         n_hidden = 20
@@ -45,7 +65,7 @@ class TestNeuralNetwork(TestCase):
         nn.add_layer(hidden_layer)
 
         weights_ih = nn.weights(0,1)
-        self.assertIsNot(weights_ih,None)
+        self.assertTrue(weights_ih is not None)
 
         init = tf.initialize_all_variables()
         with tf.Session() as ss:
@@ -54,25 +74,7 @@ class TestNeuralNetwork(TestCase):
             self.assertEqual(c,n_inputs)
             self.assertEqual(r,n_hidden)
 
-    def test_layer(self):
-        n_inputs = 10
-        n_hidden = 20
 
-        x = tf.ones([1,n_inputs])
-        input_layer = Layer(n_units=n_inputs,activation=x)
-
-        nn = NeuralNetwork(input_layer)
-        self.assertEqual(nn.size(), 1)
-
-        # add a layer with biases
-        hidden_layer = Layer(n_hidden,activation=tf.identity)
-        nn.add_layer(hidden_layer, biased=True)
-
-        layer_0 = nn.layer(0)
-        layer_1 = nn.layer(1)
-
-        self.assertEqual(layer_0,input_layer)
-        self.assertEqual(layer_1,hidden_layer)
 
     def test_biases(self):
         n_inputs = 10
@@ -214,7 +216,3 @@ class TestNeuralNetwork(TestCase):
 
             # outputs should be the same since the networks are equivalent
             self.assertTrue(np.array_equal(out_nn1,out_nn2))
-
-
-if __name__ == '__main__':
-    main()

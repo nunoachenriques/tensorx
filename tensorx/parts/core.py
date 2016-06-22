@@ -15,7 +15,7 @@
 
 import tensorflow as tf
 import networkx as nx
-from .variable_init import normalised_weight_init
+from tensorx.parts.variable_init import normalised_weight_init
 
 
 class Layer(object):
@@ -147,7 +147,7 @@ class NeuralNetwork(object):
 
         # 1 create weights between layers i and j
         weights_ij = shared_weights
-        if not shared_weights:
+        if shared_weights is None:
             weights_ij = tf.Variable(weight_init(layer_i.n_units, layer_j.n_units))
 
         self.graph.add_edge(li,lj)
@@ -203,10 +203,8 @@ class NeuralNetwork(object):
         """
         if not isinstance(layer,Layer):
             raise ValueError("layer must be an instance of Layer")
-        elif shared_weights and not (
-                    isinstance(shared_weights, tf.Tensor) or
-                    isinstance(shared_weights, tf.Variable)):
-            raise ValueError("shared weights must be a reference to a TensorFlow.Variable or None")
+        elif (shared_weights is not None) and not (isinstance(shared_weights, tf.Variable) or isinstance(shared_weights, tf.Tensor)):
+            raise ValueError("shared weights must be a reference to a TensorFlow.Variable/Tensor or None")
         else:
             # 1. add new layer
             n_layers = self.size()

@@ -14,13 +14,8 @@
 # ======================================================================================================================
 
 from distutils.core import setup
-import sys
 
-# python version restriction set to 3.4
-if not sys.version_info[0] == 3 and not sys.version_info[1] == 4:
-    sys.exit("Sorry, TensorX runs on python 3.4 only!")
-
-_VERSION = '0.1.0'
+_VERSION = '0.2.0'
 
 setup(
     name='tensorx',
@@ -29,11 +24,11 @@ setup(
     url='https://github.com/davidelnunes/tensorx',
     license='Apache 2.0',
     author='Davide Nunes',
-    author_email='davidelnunes@gmail.com',
+    author_email='mail@davidenunes.com',
     description='Utility Library for TensorFlow',
 
     install_requires=[
         'networkx>=1.11',
-        'numpy >= 1.8.2'
+        'numpy >= 1.11'
     ]
 )

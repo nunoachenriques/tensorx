@@ -29,6 +29,7 @@ setup(
 
     install_requires=[
         'networkx>=1.11',
-        'numpy >= 1.11'
+        'numpy >= 1.11',
+        'tensorflow > 0.12.1'
     ]
 )

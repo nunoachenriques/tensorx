@@ -16,7 +16,7 @@ out = network.output()
 
 
 with tf.Session() as ss:
-    init_op = tf.initialize_all_variables()
+    init_op = tf.global_variables_initializer()
     ss.run(init_op)
 
     matrix1 = np.random.uniform(-1,1,(2,2))

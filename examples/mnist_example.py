@@ -44,7 +44,7 @@ correct_prediction = tf.equal(tf.argmax(network_output,1), tf.argmax(target_outp
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
 
 # run train and test
-tf.initialize_all_variables().run()
+tf.global_variables_initializer().run()
 
 n_steps = 1000
 for i in range(n_steps):

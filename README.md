@@ -5,14 +5,7 @@
 A minimalist utility library to build neural network models in TensorFlow with minimum verbose (and without unnecessary 
 levels of abstraction). _TensorX_ provides a minimum set of utility _parts_ to build computation graphs.
 
-## Pip Installation
-1. Install [TensorFlow](https://www.tensorflow.org/versions/r0.11/get_started/os_setup.html) (Currnetly using version r0.11)
-```
-# Ubuntu/Linux 64-bit, CPU only:
-sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0rc0-cp35-cp35m-linux_x86_64.whl
-```
-
-2. Install TensorX
+## Pip installation
 ```
 sudo pip3 install --upgrade git+https://github.com/davidelnunes/tensorx.git
 ```
@@ -51,7 +44,7 @@ correct_prediction = tf.equal(tf.argmax(network_output,1), tf.argmax(target_outp
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
 
 # run train and test
-tf.initialize_all_variables().run()
+tf.global_variables_initializer().run()
 
 n_steps = 1000
 for i in range(n_steps):
@@ -75,7 +68,7 @@ ss.close()
 ```
 
 ## Licence
-Copyright 2016 Davide Nunes
+Copyright 2017 Davide Nunes
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
